@@ -34,4 +34,4 @@ class Prestamo(models.Model):
     # cliente id foring key?
 
     def __str__(self):
-        return self.Apellido
+        return self.Tipo

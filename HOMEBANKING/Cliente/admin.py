@@ -11,4 +11,4 @@ class ClienteAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Cliente, ClienteAdmin)
 admin.site.register(models.Empleado)
-
+admin.site.register(models.Prestamo)
