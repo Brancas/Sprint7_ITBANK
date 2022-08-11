@@ -1,4 +1,12 @@
 /* NAVBAR SACADA DEL YOUTUBE*/
+button {
+    background-color: white;
+    transition: background-color .5s;
+
+  }
+  button:hover{
+    background-color: #FEDE3B;
+  }
 .navbar-toggler {
     width: 20px;
     height: 20px;
