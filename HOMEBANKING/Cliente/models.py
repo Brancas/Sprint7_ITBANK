@@ -1,7 +1,8 @@
 from django.db import models
+from .choices import tipo_clientes
+from Sucursal.models import Sucursal
 
 # Create your models here.
-
 
 class Cliente(models.Model):
     Apellido = models.CharField(max_length=30, verbose_name='Apellido')
@@ -10,28 +11,13 @@ class Cliente(models.Model):
     FechaNacimiento = models.DateField(verbose_name='Fecha Nacimiento')
     telefono = models.IntegerField(verbose_name='telefono')
     Email = models.EmailField(max_length=255, verbose_name='Email')
+    tipo_cliente = models.CharField(max_length= 1, choices=tipo_clientes, default= 'C')
+    sucursal = models.ForeignKey(Sucursal, null= True, blank= True, on_delete = models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+        db_table = 'cliente'
 
     def __str__(self):
         return self.Apellido
-
-
-class Empleado(models.Model):
-    Apellido = models.CharField(max_length=30, verbose_name='Apellido')
-    Nombre = models.CharField(max_length=30, verbose_name='Nombre')
-    DNI = models.IntegerField(verbose_name='DNI')
-    FechaNacimiento = models.DateField(verbose_name='Fecha Nacimiento')
-    telefono = models.IntegerField(verbose_name='telefono')
-    Email = models.EmailField(max_length=255, verbose_name='Email')
-
-    def __str__(self):
-        return self.Apellido
-
-
-class Prestamo(models.Model):
-    Tipo = models.CharField(max_length=255, verbose_name="Tipo")
-    Fecha = models.DateField(auto_now_add=True, verbose_name="Fecha")
-    Total = models.IntegerField(verbose_name="Total")
-    # cliente id foring key?
-
-    def __str__(self):
-        return self.Tipo
