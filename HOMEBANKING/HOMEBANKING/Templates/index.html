@@ -96,13 +96,16 @@
 #boton_nav:hover{
     background-color: #FEDE3B;
   }
+  a{
+    color:inherit
+  }
    </style>
 
     
     <!--CUALQUIER CAMBIO EN ESTA PLANTILLA AFECTARA A LAS DEMAS LAS CUALES LA HEREDEN!!!.-->
    
-    <title> <!--contenido cambiante en cada pagina, titulo-->
-        titulo de prueba
+    <title> 
+        
         {% block title %}
 
             {% endblock %}
@@ -139,7 +142,8 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white text-decoration-none">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      
+      <img class ="navbar-brand" src="{% static 'img/logoitbank.png' %} width=200 height=200" alt="logo itbank">
       <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="toggler-icon top-bar"></span>
         <span class="toggler-icon middle-bar"></span>
@@ -159,13 +163,24 @@
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
-          <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3  text-white" data-bs-toggle="modal"
-          data-bs-target="#feedbackModal2" id="boton_nav">
-          <span class="small">More Coins</span>
+          <li>
           <button onclick="actualizarCotizaciones()" class="btn rounded-pill px-3 mb-2 mb-lg-0  text-white"
           data-bs-toggle="modal" data-bs-target="#feedbackModal" id="boton_nav">
           <span class="small">Dolar Now</span>
+        </li>
+        {% if user.is_authenticated%}
+          <li>
+            <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3  text-white" data-bs-toggle="modal"
+            data-bs-target="#feedbackModal2" id="boton_nav">
+             <a class="text-decoration-none" href="#{% url 'logout' %}" >Cerrar sesión</a> 
+          </li>
+        {% else %}
+        <li>
+          <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3  text-white" data-bs-toggle="modal"
+          data-bs-target="#feedbackModal2" id="boton_nav">
+          <span class="small">Registrate!</span>
+        </li>
+        {% endif %}
       </button>
       </button>
         </ul>
@@ -179,7 +194,7 @@
 
 
   <body>
-    <h5>Pagina de itbank</h5>
+ 
     <!--Contenido cambiante del cuerpo de cada pagina-->
     {% block content %}
         

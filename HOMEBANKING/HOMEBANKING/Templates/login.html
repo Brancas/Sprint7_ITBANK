@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="estilos.css">
   </head>-->
   <body>
+    <style>
+    body{ 
+      background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+      /*background: rgb(254,222,59);
+      background: radial-gradient(circle, rgba(254,222,59,1) 0%, rgba(254,222,59,1) 35%, rgba(254,183,59,1) 100%); 
+      background: rgb(17,138,178);
+      background: radial-gradient(circle, rgba(17,138,178,1) 0%, rgba(6,214,160,1) 35%, rgba(7,59,76,1) 100%); */
+    }
+    #container-login{
+       background: transparent;
+    }
+    
+    #imagenes-muestra{
+      background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    }
+        </style>
+        
    <!--  <nav class="navbar navbar-expand-lg bg-light fixed-top ms-end " id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand text-dark" href="#">Navbar</a>
@@ -73,7 +90,7 @@
     <form action="" method="POST">
       {% csrf_token %}
  <form> 
-   <div class="container w-75  bg-transparent" id="container-login">
+  <div>
      {%if messages%}
        {% for message in messages%}
        <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -90,7 +107,7 @@
         <div class="form-control">
             <div class="row align-items-stretch">
                 <div class="col" id="imagenes-muestra">
-                    <img src="{% static 'img/Top up credit-pana.png' %}" width="570" height="490" alt="transferencias imagenes">
+                    <img src="{% static 'img/Top up credit-pana.png' %}" width="490" height="500" alt="transferencias imagenes">
                 </div>
                 <div class="col p-5">
                     <form class="text-dark"id="formulario">
