@@ -1,6 +1,7 @@
 from django.db import models
 from Tarjeta.choices import marca_tarjetas, tipo_tarjetas
 from django.core.validators import MaxValueValidator, MinValueValidator
+from Cliente.models import Cliente
 
 # Create your models here.
 
@@ -11,6 +12,7 @@ class Tarjeta(models.Model):
     fecha_expiracion = models.DateField(verbose_name="fecha_expiracion")
     marca = models.CharField(max_length=2, choices=marca_tarjetas)
     tipo = models.CharField(max_length=2, choices=tipo_tarjetas)
+    cliente = models.ForeignKey(Cliente,null= True, blank= True, on_delete = models.CASCADE)
 
     class Meta:
         verbose_name = "tarjeta"
