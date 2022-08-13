@@ -1,268 +1,204 @@
-{% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>ITBANK</title>
+    <link rel="stylesheet" href="{% static 'index/css/estilos.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'index/assets/img/bank.png' %}" />
+{% include 'bootstrap_head.html' %}
+    <link href="{% static 'index/css/styles.css' %}" rel="stylesheet" />
+</head>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-   <!-- <link href="estilos.css" rel="stylesheet" type="text/css">-->
-   <style>
+<body id="page-top" class="" style="background-color: #FEDE3B;">
 
-.navbar-toggler {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    transition: .5s ease-in-out;
-}
+{% include 'top_navbar.html' %}
+{% comment "Content" %}{% endcomment %}
 
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus {
-    outline: none;
-    box-shadow: none;
-    border: 0;
-}
+    <header class="masthead container" style="background-color: #FEDE3B;">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="mb-5 mb-lg-0 text-center text-lg-start">
 
-.navbar-toggler span {
-    margin: 0;
-    padding: 0;
-}
+                        <h1 class="font-alt">Coming Soon</h1>
 
-.toggler-icon {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #d3531a;
-    border-radius: 1px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
+                        <p class="lead fw-normal text-dark mb-5">We are expanding our app to offer quicker solutions.
+                        </p>
+                        <div class="d-flex flex-column flex-lg-row align-items-center">
+                            <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge"
+                                    src="{% static 'index/assets/img/google-play-badge.svg' %} " alt="..." /></a>
+                            <a href="#!"><img class="app-badge" src="{% static 'index/assets/img/app-store-badge.svg' %} " alt="..." /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="masthead-device-mockup">
+                        <div class="device-wrapper">
+                            <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                <div class="screen bg-black">
 
-.middle-bar {
-    margin-top: 0px;
-}
-
-/* when navigation is clicked */
-
-.navbar-toggler .top-bar {
-    margin-top: 0px;
-    transform: rotate(135deg);
-}
-
-.navbar-toggler .middle-bar {
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-
-.navbar-toggler .bottom-bar {
-    margin-top: 0px;
-    transform: rotate(-135deg);
-}
-
-/* State when the navbar is collapsed */
-
-.navbar-toggler.collapsed .top-bar {
-    margin-top: -20px;
-    transform: rotate(0deg);
-}
-
-.navbar-toggler.collapsed .middle-bar {
-    opacity: 1;
-    filter: alpha(opacity=100);
-}
-
-.navbar-toggler.collapsed .bottom-bar {
-    margin-top: 20px;
-    transform: rotate(0deg);
-}
-
-/* Color of 3 lines */
-
-.navbar-toggler.collapsed .toggler-icon {
-    background: linear-gradient( 263deg, rgba(252,74,74,1) 0%, rgba(0,212,255,1) 100% );
-}
-#boton_nav{
-    background-color:#212529;
-    transition: background-color .5s;
-
-  }
-#boton_nav:hover{
-    background-color: #FEDE3B;
-  }
-  a{
-    color:inherit
-  }
-   </style>
-
-    
-    <!--CUALQUIER CAMBIO EN ESTA PLANTILLA AFECTARA A LAS DEMAS LAS CUALES LA HEREDEN!!!.-->
-   
-    <title> 
-        
-        {% block title %}
-
-            {% endblock %}
-    </title>
-  </head>
-<!--COMIENZA LA NAVBAR DE BOOSTRAP -->
-<!-- NUESTRA NAVBAR DEL SPRINT 2
-<nav class="navbar navbar-expand-lg bg-black text-white fixed-top shadow-sm" id="mainNav">
-  <div class="container">
-      <a class="navbar-brand text-light" href="#page-top">ITBANK</a>
-      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-          aria-label="Toggle navigation">
-          Menu
-          <i class="bi-list"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto me-3 my-3 my-lg-0">
-              <li class="nav-item"><a class="nav-link me-lg-3 text-white" href="#features">About Us</a></li>
-          </ul>
-          <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3" data-bs-toggle="modal"
-              style="background-color: #FEDE3B;" data-bs-target="#feedbackModal2">
-              <span class="small">More Coins</span>
-          </button>
-          <button onclick="actualizarCotizaciones()" class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black"
-              data-bs-toggle="modal" style="background-color: #FEDE3B;" data-bs-target="#feedbackModal">
-              <span class="small">Dolar Now</span>
-          </button>
-      </div>
-  </div>
-</nav>
--->
-<!--TERMINA LA NAVBAR -->
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white text-decoration-none">
-    <div class="container-fluid">
-      
-      <img class ="navbar-brand" src="{% static 'img/logoitbank.png' %} width=200 height=200" alt="logo itbank">
-      <button class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="toggler-icon top-bar"></span>
-        <span class="toggler-icon middle-bar"></span>
-        <span class="toggler-icon bottom-bar"></span>
-        
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          <li>
-          <button onclick="actualizarCotizaciones()" class="btn rounded-pill px-3 mb-2 mb-lg-0  text-white"
-          data-bs-toggle="modal" data-bs-target="#feedbackModal" id="boton_nav">
-          <span class="small">Dolar Now</span>
-        </li>
-        {% if user.is_authenticated%}
-          <li>
-            <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3  text-white" data-bs-toggle="modal"
-            data-bs-target="#feedbackModal2" id="boton_nav">
-             <a class="text-decoration-none" href="#{% url 'logout' %}" >Cerrar sesión</a> 
-          </li>
-        {% else %}
-        <li>
-          <button class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3  text-white" data-bs-toggle="modal"
-          data-bs-target="#feedbackModal2" id="boton_nav">
-          <span class="small">Registrate!</span>
-        </li>
-        {% endif %}
-      </button>
-      </button>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-
-
-
-
-  <body>
- 
-    <!--Contenido cambiante del cuerpo de cada pagina-->
-    {% block content %}
-        
-
-    {% endblock %}
-    <!--termina el contenido cambiante. Comienza el footer-->
-    <!--cambiar color-->
-    
-    <div class="container-fluid">
-        <div class="row p-5  pb-3 bg-dark text-white">
-          <div class="col-xs-12 col-md-6 col-lg-3">
-            <h5 class="h5 mb-4">ITBANK</h5>
-            <h6 class="h6 mb-4">Copyright ITBANK-Todos los derechos reservados</h6>
-            <h6 class="h6 mb-4">logos de redes sociales</h6>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-3">
-              <h6 class="h5 mb-3">Estamos para ayudarte</h6>
-              <h6>011-225569</h6>
-              <h6>0810-222-7071</h6>
-              <h6><a class="text-white text-decoration-none" href="#">contactenos@itbank.com</a></h6>
-              <h6><a class="text-white text-decoration-none" href="#">Chateá con nosotros</a></h6>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-3">
-                <h5 class="h5 mb-3">Atencion al cliente</h5>
-                <h6><a class="text-white text-decoration-none" href="#">Sucursales</a></h6>
-                <h6><a class="text-white text-decoration-none" href="#">Turnos</a></h6>
-                <h6><a class="text-white text-decoration-none" href="#">Empresas</a></h6>
-                <h6><a class="text-white text-decoration-none" href="#">Defensa al consumidor</a></h6>
-          </div>
-          <div class="col-xs-12 col-md-6 col-lg-3">
-              <h5 class="h5 mb-3">Preguntas frecuentes</h5>
-              <h6><a class="text-white text-decoration-none" href="#">Pagos</a></h6>
-              <h6><a class="text-white text-decoration-none" href="#">Cuentas y tarjetas</a>
-                </h6>
-              <h6><a class="text-white text-decoration-none" href="#">Inversiones</a></h6>
-              <h6><a class="text-white text-decoration-none" href="#">Todas las preguntas frecuentes</a></h6>
-          </div>
+                                    <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
+                                        <source src="{% static 'index/assets/img/demo-screen.mp4' %} " type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </header>
 
+    <aside class="text-center" style="background-color: #d8d4d4; width: 100%;">
+        <div class="container px-5">
+            <div class="row gx-5 justify-content-center">
+                <div class="col-12 col-md-12 col-xl-12">
+                    <div class="col-12 col-md-12 col-xl-12 text-center">
+                        <h3 class="font-alt">It's 4U</h3>
+                        <p class="text-muted mb-0">Simple, Comfortable, Intuitive, Modern</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-12 col-md-12">
+                    <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" />
+                        <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
+                            <source src="{% static 'index/assets/video/video2-faster.mp4' %}" type="video/mp4" />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <section id="features" class="container">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
+                    <div class="container-fluid px-5">
+                        <div class="row gx-5">
+                            <div class="col-md-12 mb-12">
+                                <!-- Feature item-->
+                                <div class="text-center">
+                                    <i class="bi-phone icon-feature text-gradient d-block mb-3"></i>
+                                    <h3 class="font-alt">About Us</h3>
+                                    <p class="text-muted mb-0">We are a young Bank that seeks to make your life more
+                                        comfortable</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-center p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                        class="bi bi-people-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                        <path fill-rule="evenodd"
+                                            d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z" />
+                                        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
+                                    </svg>
+                                    <h3 class="font-alt p-2">Join us for free</h3>
+                                    <p class="text-muted mb-0">Create your account FREE!</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <div class="text-center p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                        class="bi bi-laptop" viewBox="0 0 16 16">
+                                        <path
+                                            d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
+                                    </svg>
+                                    <h3 class="font-alt p-2">Online</h3>
+                                    <p class="text-muted mb-0">We are the leading private bank in the Argentine
+                                        financial system in terms of savings and credit volume.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-5 mb-md-0">
+                                <div class="text-center p-2 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                        class="bi bi-bank2" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z" />
+                                    </svg>
+                                    <h3 class="font-alt">Bank</h3>
+                                    <p class="text-muted">We are one of the leading banks in payment methods, foreign
+                                        trade, transactional services, and cash management. And also one of the main
+                                        players in the stock markets is government bonds and foreign exchange.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-5">
+
+                                <div class="text-center p-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                        class="bi bi-building" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z" />
+                                        <path
+                                            d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z" />
+                                    </svg>
+                                    <h3 class="font-alt p-2">Society</h3>
+                                    <p class="text-muted mb-0">We encourage the link with higher education institutions
+                                        through Santander University. During 2017 we reached agreements with 86 public
+                                        and private universities; 103 universities participated in a scholarship, award,
+                                        internship, or training program, and 40 have the Intelligent University Card
+                                        service.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-lg-0">
+                    <div class="features-device-mockup">
+                        <div class="device-wrapper">
+                            <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
+                                <div class="screen bg-black">
+                                    <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
+                                        <source src="{% static 'index/assets/img/demo-screen.mp4' %} " type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-white" style="background-color: black">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
+                <div class="col-12 col-md-6 col-xl-6">
+                    <h3 class=" font-alt display-4 lh-1 mb-4">Enter a new age of web design</h3>
+                    <p class="lead fw-normal text-muted mb-5 mb-lg-0"> Your Digital Bank, always
+                        with you, wherever you are</p>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <video muted="muted" autoplay="" loop="" style="width: 100%;">
+                        <source src="{% static 'index/assets/video/video1.mp4' %}" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-black col-12 col-md-12 col-xl-12" style="width: 100%">
+        <video muted="muted" autoplay="" loop="" style="width: 100%; height: 100%;">
+            <source src="{% static 'index/assets/video/Video3.mp4' %}" type="video/mp4" />
+        </video>
     </div>
-    
-    <!--SMART COOKIES FOOTER
-    <footer class="bg-black text-center py-5 col-12 col-md-12 col-xl-12" style="width: 100%;">
-      <div class="text-white-50 small">
-          <div class="mb-2">&copy;Smart Cookies</div>
-          <a href="#!">Privacy</a>
-          <span class="mx-1">&middot;</span>
-          <a href="#!">Terms</a>
-          <span class="mx-1">&middot;</span>
-          <a href="#!">FAQ</a>
-      </div>
-  </footer>-->
+{% comment %} footer {% endcomment %}
+{% include 'footer.html' %}
+{% include 'dolar_now_modal.html' %}
+{% include 'more_coins_modal.html' %}
+{% include 'bootstrap_scripts.html' %}
+    <script src="{% static 'index/js/main.js' %}"></script>
+</body>
 
-
-
-
-    <!--Termina el footer-->
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    -->
-  </body>
 </html>
