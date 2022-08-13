@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="mb-3">
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Cuentas guardadas</label>
+            <select class="form-select" id="inputGroupSelect01" disabled>
+              <option selected>Temporalmente deshabilitado</option>
+            </select>
+          </div>
+          
+
+    </div>  
+    <form method="post"> {% csrf_token %}
+        <div class="input-group mb-3">
+          <span class="input-group-text">Recordar</span>
+          <span class="input-group-text">
+                <input class="form-check-input mt-0" type="checkbox" value="" disabled>
+          </span>
+          </span>
+          <input type="text" name = "CT_Destino" class="form-control" placeholder="CBU, CVU o ALIAS" aria-label="Text input with checkbox" required>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input name = "TRF_monto" type="number" min="0" class="form-control" required>
+            <span class="input-group-text">.00</span>
+          </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  </body>
+</html>

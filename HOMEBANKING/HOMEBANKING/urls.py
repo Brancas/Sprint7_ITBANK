@@ -20,11 +20,12 @@ from registro.views import registro_usuario
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import landing_page
+from Movimiento import views
 urlpatterns = [
     path('', landing_page),
     path('admin/', admin.site.urls),
     path('login',include('django.contrib.auth.urls')),
     path('login/',login_usuario),
     path('registrate/',registro_usuario),
-   
+    path('transferencia/', views.transferencia),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
