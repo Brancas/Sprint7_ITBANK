@@ -59,10 +59,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'HOMEBANKING.urls'
 
+TEMPLATE_DIR_ROOT = os.path.join(BASE_DIR, 'HOMEBANKING\Templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'HOMEBANKING\Templates'),],
+        'DIRS': [TEMPLATE_DIR_ROOT, os.path.join(TEMPLATE_DIR_ROOT, 'bootstrap'),
+                                    os.path.join(TEMPLATE_DIR_ROOT, 'buttons'),
+                                    os.path.join(TEMPLATE_DIR_ROOT, 'modals'),
+                                    os.path.join(TEMPLATE_DIR_ROOT, 'navbar'),
+                                    os.path.join(TEMPLATE_DIR_ROOT, 'parents')
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

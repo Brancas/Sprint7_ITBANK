@@ -1,8 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render,redirect
-from django.template import Template,context
+from django.shortcuts import render, redirect
+from django.template import Template, context
 from django.template import loader
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 # Create your views here.
 admin_chango="http://127.0.0.1:8000/admin/"
@@ -16,7 +16,7 @@ def login_usuario(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request,("Bienvenido de nuevo."))
+            messages.success(request, ("Bienvenido de nuevo."))
 
             return redirect(admin_chango)
 
@@ -27,10 +27,10 @@ def login_usuario(request):
         else:
             username = request.POST['username']
             password = request.POST['password']
-            messages.success(request,("Usuario o contraseña invalidos."))
+            messages.success(request, ("Usuario o contraseña invalidos."))
             return redirect(login_usuario)
             # Return an 'invalid login' error message.
             
     else:
-        return render(request,'login.html')
+        return render(request, 'login.html')
     

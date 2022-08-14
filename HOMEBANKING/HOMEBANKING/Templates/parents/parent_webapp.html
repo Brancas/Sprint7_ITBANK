@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% include 'bootstrap_head.html' %}
+    <style>
+      .navbar-toggler {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        transition: 0.5s ease-in-out;
+      }
+      .navbar-toggler,
+      .navbar-toggler:focus,
+      .navbar-toggler:active,
+      .navbar-toggler-icon:focus {
+        outline: none;
+        box-shadow: none;
+        border: 0;
+      }
+
+      .navbar-toggler span {
+        margin: 0;
+        padding: 0;
+      }
+
+      .toggler-icon {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #d3531a;
+        border-radius: 1px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+
+      .middle-bar {
+        margin-top: 0px;
+      }
+
+      /* when navigation is clicked */
+
+      .navbar-toggler .top-bar {
+        margin-top: 0px;
+        transform: rotate(135deg);
+      }
+
+      .navbar-toggler .middle-bar {
+        opacity: 0;
+        filter: alpha(opacity=0);
+      }
+
+      .navbar-toggler .bottom-bar {
+        margin-top: 0px;
+        transform: rotate(-135deg);
+      }
+
+      /* State when the navbar is collapsed */
+
+      .navbar-toggler.collapsed .top-bar {
+        margin-top: -20px;
+        transform: rotate(0deg);
+      }
+
+      .navbar-toggler.collapsed .middle-bar {
+        opacity: 1;
+        filter: alpha(opacity=100);
+      }
+
+      .navbar-toggler.collapsed .bottom-bar {
+        margin-top: 20px;
+        transform: rotate(0deg);
+      }
+
+      /* Color of 3 lines */
+
+      .navbar-toggler.collapsed .toggler-icon {
+        background: linear-gradient(
+          263deg,
+          rgba(252, 74, 74, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+      #boton_nav {
+        background-color: #212529;
+        transition: background-color 0.5s;
+      }
+      #boton_nav:hover {
+        background-color: #fede3b;
+      }
+      a {
+        color: inherit;
+      }
+    </style>
+
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  {% include 'navbar__login.html' %} 
+  {% if user.is_authenticated%}
+  <li>
+    <button
+      class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3 text-white"
+      data-bs-toggle="modal"
+      data-bs-target="#feedbackModal2"
+      id="boton_nav"
+    >
+      <a class="text-decoration-none" href="#{% url 'logout' %}"
+        >Cerrar sesión</a
+      >
+    </button>
+  </li>
+  {% endif %}
+
+  <body>
+    {% block content %} {% endblock %} 
+    {% include 'bootstrap_scripts.html' %}
+    {% include 'footer.html' %} 
+  </body>
+</html>
