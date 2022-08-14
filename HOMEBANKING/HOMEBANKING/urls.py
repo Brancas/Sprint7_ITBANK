@@ -17,20 +17,37 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 from Login.views import login_usuario
 from registro.views import registro_usuario
-from .views import landing_page, main_app
+from .views import (landing_page, 
+                    main_home,
+                    main_prestamos,
+                    main_movimientos, 
+                    main_cajas, 
+                    main_tarjetas, 
+                    main_cuenta,)
+
 from Movimiento import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', landing_page, name="Landing Page"),
+    path('', landing_page, name = "Landing Page"),
     path('login', include('django.contrib.auth.urls')),
     path('login/', login_usuario),
     path('registrate/',registro_usuario),
     path('transferencia/', views.transferencia),
-    path('main/', main_app),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('main/', main_home),
+    path('main/prestamos/', main_prestamos),
+    path('main/movimientos/', main_movimientos),
+    path('main/cajas/', main_cajas),
+    path('main/tarjetas/', main_tarjetas),
+    path('main/cuenta/', main_cuenta),
+]
+
+urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
