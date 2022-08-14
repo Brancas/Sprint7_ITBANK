@@ -5,3 +5,7 @@ from django.http import HttpResponse
 def landing_page(request):
 
     return render(request, 'index.html')
+
+def main_app(request):
+
+    return render(request, 'main.html')

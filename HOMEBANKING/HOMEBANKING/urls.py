@@ -21,8 +21,10 @@ from django.conf.urls.static import static
 
 from Login.views import login_usuario
 from registro.views import registro_usuario
-from .views import landing_page
+from .views import landing_page, main_app
 from Movimiento import views
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', landing_page, name="Landing Page"),
@@ -30,4 +32,5 @@ urlpatterns = [
     path('login/', login_usuario),
     path('registrate/',registro_usuario),
     path('transferencia/', views.transferencia),
+    path('main/', main_app),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
