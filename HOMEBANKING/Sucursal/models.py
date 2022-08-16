@@ -13,4 +13,4 @@ class Sucursal(models.Model):
         db_table = 'Sucursal'
     
     def __str__(self):
-        return self.numero_sucursal
+        return self.nombre_sucursal
