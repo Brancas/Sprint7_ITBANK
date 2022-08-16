@@ -5,7 +5,7 @@ from django.template import loader
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 # Create your views here.
-admin_chango="http://127.0.0.1:8000/admin/"
+
 def login_usuario(request):
     # Con este if comprobamos que el usuario haya rellenado los formularios.
     # Si no los rellena solamente muestra la pagina.        
@@ -18,7 +18,7 @@ def login_usuario(request):
             login(request, user)
             messages.success(request, ("Bienvenido de nuevo."))
 
-            return redirect(admin_chango)
+            return redirect('main')
 
            
             # Redirect to a success page.

@@ -18,6 +18,7 @@ from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth import views as auth_views
 
 
 from Login.views import login_usuario
@@ -28,7 +29,10 @@ from .views import (landing_page,
                     main_movimientos, 
                     main_cajas, 
                     main_tarjetas, 
-                    main_cuenta,)
+                    main_cuenta,
+                    home,
+                    register,
+                    )
 
 from Movimiento import views
 
@@ -40,12 +44,15 @@ urlpatterns = [
     path('login/', login_usuario),
     path('registrate/',registro_usuario),
     path('transferencia/', views.transferencia),
-    path('main/', main_home),
+    path('main/', main_home,  name = "main"),
     path('main/prestamos/', main_prestamos),
     path('main/movimientos/', main_movimientos),
     path('main/cajas/', main_cajas),
     path('main/tarjetas/', main_tarjetas),
     path('main/cuenta/', main_cuenta),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('inicio/', home, name = 'home'),
+    path('register/', register, name = 'register'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
