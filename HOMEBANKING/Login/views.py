@@ -13,6 +13,7 @@ from django.contrib import messages
 from .forms import registroForm
 
 # Create your views here.
+<<<<<<< HEAD
 admin_chango="http://127.0.0.1:8000/admin/"
 
 def registro_usuario(request):
@@ -31,6 +32,8 @@ def registro_usuario(request):
     return render(request,'registro.html',{'form':form,'submitted':submitted})
 
 
+=======
+>>>>>>> 222987121ad044270f40f25f10ae9ff1e6812deb
 
 def login_usuario(request):
     # Con este if comprobamos que el usuario haya rellenado los formularios.
@@ -44,7 +47,7 @@ def login_usuario(request):
             login(request, user)
             messages.success(request, ("Bienvenido de nuevo."))
 
-            return redirect(admin_chango)
+            return redirect('main')
 
            
             # Redirect to a success page.
