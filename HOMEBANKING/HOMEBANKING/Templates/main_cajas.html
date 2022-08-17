@@ -1,7 +1,49 @@
-{% extends 'parent_main.html' %}
-{% block color_home %}btn-white{% endblock color_home %}
-{% block color_prestamos %}btn-white{% endblock color_prestamos %}
-{% block color_movimientos %}btn-white{% endblock color_movimientos %}
-{% block color_cajas %}btn-primary{% endblock color_cajas %}
-{% block color_tarjetas %}btn-white{% endblock color_tarjetas %}
-{% block color_cuenta %}btn-white{% endblock color_cuenta %}
+{% extends 'parent_webapp.html' %}
+{% include 'bootstrap_head.html' %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table align-middle table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <td>Tipo de caja</td>
+                            <td>Nº</td>
+                            <td>CBU/CVU</td>
+                            <td>Balance</td>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>CAJA AHORRO EN DOLARES</td>
+                                <td>1</td>
+                                <td>10003654872001115</td>
+                                <td>$   60.000,66</td>
+                            </tr>
+                            <tr>
+                                <td>CAJA AHORRO EN DOLARES</td>
+                                <td>2</td>
+                                <td>10098654869801115</td>
+                                <td>$   120,66</td>
+                            </tr>
+                            <tr>
+                                <td>CAJA AHORRO EN PESOS</td>
+                                <td>1</td>
+                                <td>1009869879787815</td>
+                                <td>$   12000,69</td>
+                            </tr>
+                            <tr>
+                                <td>CAJA CORRIENTE</td>
+                                <td>1</td>
+                                <td>10094687354874875</td>
+                                <td>$   200.000,44</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+{% include 'bootstrap_scripts.html' %}
+{% endblock page_content %}

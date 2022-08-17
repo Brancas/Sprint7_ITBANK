@@ -1,0 +1,61 @@
+{% extends 'parent_webapp.html' %}
+{% include 'bootstrap_head.html' %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="container">
+            <p class="h5 text-center">ACTIVIDAD DE LA CUENTA</p>
+        </div>
+        <div class="col-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table align-middle table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <td>Nº SESION</td>
+                                        <td>FECHA</td>
+                                        <td>HASH</td>
+                                        <td>CUENTAS AFECTADAS</td>
+                                    </tr>
+            
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td>5987654987654</td>
+                                            <td>17/08/22</td>
+                                            <td>01dfae6e5d4d90d9892622325959afbe:9999991</td>
+                                            <td>10003654872001115, 	1009869879787815</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5987654987653</td>
+                                            <td>16/08/22</td>
+                                            <td>01dfae6e5d4d90d9892622325959afbe:7050888</td>
+                                            <td>10003654872001115, 	1009869879787815</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5987654987652</td>
+                                            <td>15/08/22</td>
+                                            <td>01dfae6e5d4d90d9892622325959afbe:705666</td>
+                                            <td>10003654872001115, 	1009869879787815</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5987654987651</td>
+                                            <td>12/08/22</td>
+                                            <td>01dfae6e5d4d90d9892622325959afbe:705325</td>
+                                            <td>10003654872001115</td>
+                                        </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>            
+        </div>
+</div>
+{% include 'bootstrap_scripts.html' %}
+{% endblock page_content %}
