@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {% include 'bootstrap_head.html' %}
+
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  {% include 'navbar__login.html' %} 
+  {% if user.is_authenticated%}
+  <li>
+    <button
+      class="btn rounded-pill px-3 mb-2 mb-lg-0 text-black me-3 text-white"
+      data-bs-toggle="modal"
+      data-bs-target="#feedbackModal2"
+      id="boton_nav"
+    >
+      <a class="text-decoration-none" href="#{% url 'logout' %}"
+        >Cerrar sesión</a
+      >
+    </button>
+  </li>
+  {% endif %}
+
+  <body>
+    {% block content %} {% endblock %} 
+    {% include 'bootstrap_scripts.html' %}
+    {% include 'footer.html' %} 
+  </body>
+</html>

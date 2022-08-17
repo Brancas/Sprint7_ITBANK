@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+
 {%block title %} Registrate {% endblock %}
 {% block content %}
 <style>
@@ -8,6 +9,9 @@
         }
 </style>
 
+
+
+{% block content %}
 
   <body>
 {% if submitted %}
@@ -67,6 +71,7 @@
         </div>
     </div>
 </div>
+
    
 {% endif %}
 
@@ -79,7 +84,10 @@
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     
     
+
+
+
   </body>
   {% endblock %}
-<!--</html>-->
+
 
