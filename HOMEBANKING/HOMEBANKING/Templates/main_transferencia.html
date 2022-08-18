@@ -1,11 +1,11 @@
 {% extends 'parent_webapp.html' %}
 {% include 'bootstrap_head.html' %}
-
-{% block custom_head %}
-    
-{% endblock custom_head %}
-    
 {% block page_content %}
-
+<div class="container">
+    <div class="col-12">
+        {% csrf_token %}
+        {% include 'form_transferencia.html' %}
+    </div>
+</div>
 {% include 'bootstrap_scripts.html' %}
 {% endblock page_content %}

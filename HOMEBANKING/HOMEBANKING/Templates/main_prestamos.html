@@ -1,7 +1,17 @@
-{% extends 'parent_main.html' %}
-{% block color_home %}btn-white{% endblock color_home %}
-{% block color_prestamos %}btn-primary{% endblock color_prestamos %}
-{% block color_movimientos %}btn-white{% endblock color_movimientos %}
-{% block color_cajas %}btn-white{% endblock color_cajas %}
-{% block color_tarjetas %}btn-white{% endblock color_tarjetas %}
-{% block color_cuenta %}btn-white{% endblock color_cuenta %}
+{% extends 'parent_webapp.html' %}
+{% include 'bootstrap_head.html' %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni tempora dignissimos, magnam deleniti, minima placeat facilis eaque non facere natus esse, accusantium provident inventore. Reiciendis eos veritatis fugit nulla quae?
+        </div>
+        <div class="col-9">
+            <p class="h5">Prestamos pre aprobados. Limite para su cuenta: $300.000
+                ¿Cuanto desea pedir prestado?
+                [formulario]
+            </p>
+        </div>
+</div>
+{% include 'bootstrap_scripts.html' %}
+{% endblock page_content %}

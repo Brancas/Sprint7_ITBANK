@@ -1,11 +1,59 @@
-{% extends 'parent_main.html' %}
-{% block color_home %}btn-white{% endblock color_home %}
-{% block color_prestamos %}btn-white{% endblock color_prestamos %}
-{% block color_movimientos %}btn-primary{% endblock color_movimientos %}
-{% block color_cajas %}btn-white{% endblock color_cajas %}
-{% block color_tarjetas %}btn-white{% endblock color_tarjetas %}
-{% block color_cuenta %}btn-white{% endblock color_cuenta %}
-{% block vista_app %}
-<h3 class = "text-center" >Realizar una transferencia</h3>
-{% include 'form_transferencia.html' %}
-{% endblock vista_app %}
+{% extends 'parent_webapp.html' %}
+{% include 'bootstrap_head.html' %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table align-middle table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <td>TIPO DE MOVIMIENTO</td>
+                            <td>Nº</td>
+                            <td>CBU/CVU CUENTA AFECTADA</td>
+                            <td>FECHA</td>
+                            <td>MONTO</td>
+                            <td>BALANCE</td>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>ENVIO TRANSFERENCIA</td>
+                                <td>124</td>
+                                <td>1000365487200111</td>
+                                <td>17/08/22</td>
+                                <td>$   60.000,66</td>
+                                <td>$   65489784</td>
+                            </tr>
+                            <tr>
+                                <td>RECIBO TRANSFERENCIA</td>
+                                <td>123</td>
+                                <td>1000365487200111</td>
+                                <td>17/08/22</td>
+                                <td>$   120,66</td>
+                                <td>$   65489784</td>
+                            </tr>
+                            <tr>
+                                <td>DEBITO AUTOMATICO</td>
+                                <td>122</td>
+                                <td>1000365487200111</td>
+                                <td>17/08/22</td>
+                                <td>$   12000,69</td>
+                                <td>$   65489784</td>
+                            </tr>
+                            <tr>
+                                <td>PRESTAMO</td>
+                                <td>121</td>
+                                <td>1000365487200111</td>
+                                <td>17/08/22</td>
+                                <td>$   200.000,44</td>
+                                <td>$   65489784</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+{% include 'bootstrap_scripts.html' %}
+{% endblock page_content %}

@@ -1,16 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>ITBANK</title>
-    <link rel="stylesheet" href="{% static 'index/css/estilos.css' %}">
-    <link rel="icon" type="image/x-icon" href="{% static 'index/assets/img/bank.png' %}" />
+    <link rel="stylesheet" href="{% static 'main_app/css/estilos.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'main_app/assets/img/bank.png' %}" />
 {% include 'bootstrap_head.html' %}
-    <link href="{% static 'index/css/styles.css' %}" rel="stylesheet" />
+    <link href= "{% static 'main_app/css/styles.css' %}" rel="stylesheet" />
 </head>
 
 <body id="page-top" class="" style="background-color: #FEDE3B;">
@@ -32,8 +32,8 @@
                         </p>
                         <div class="d-flex flex-column flex-lg-row align-items-center">
                             <a class="me-lg-3 mb-4 mb-lg-0" href="#!"><img class="app-badge"
-                                    src="{% static 'index/assets/img/google-play-badge.svg' %} " alt="..." /></a>
-                            <a href="#!"><img class="app-badge" src="{% static 'index/assets/img/app-store-badge.svg' %} " alt="..." /></a>
+                                    src="{% static 'main_app/assets/img/google-play-badge.svg' %} " alt="..." /></a>
+                            <a href="#!"><img class="app-badge" src="{% static 'main_app/assets/img/app-store-badge.svg' %} " alt="..." /></a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                                 <div class="screen bg-black">
 
                                     <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
-                                        <source src="{% static 'index/assets/img/demo-screen.mp4' %} " type="video/mp4" />
+                                        <source src="{% static 'main_app/assets/img/demo-screen.mp4' %} " type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                 <div class="col-12 col-md-12">
                     <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" />
                         <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
-                            <source src="{% static 'index/assets/video/video2-faster.mp4' %}" type="video/mp4" />
+                            <source src="{% static 'main_app/assets/video/video2-faster.mp4' %}" type="video/mp4" />
                         </video>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="text-center p-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
+                                    <svg xmlns="http://www.w3.org/20S00/svg" width="36" height="36" fill="currentColor"
                                         class="bi bi-people-fill" viewBox="0 0 16 16">
                                         <path
                                             d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -162,7 +162,7 @@
                             <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
                                 <div class="screen bg-black">
                                     <video muted="muted" autoplay="" loop="" style="max-width: 100%; height: 100%">
-                                        <source src="{% static 'index/assets/img/demo-screen.mp4' %} " type="video/mp4" />
+                                        <source src="{% static 'main_app/assets/img/demo-screen.mp4' %} " type="video/mp4" />
                                     </video>
                                 </div>
                             </div>
@@ -183,7 +183,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                     <video muted="muted" autoplay="" loop="" style="width: 100%;">
-                        <source src="{% static 'index/assets/video/video1.mp4' %}" type="video/mp4" />
+                        <source src="{% static 'main_app/assets/video/video1.mp4' %}" type="video/mp4" />
                     </video>
                 </div>
             </div>
@@ -192,7 +192,7 @@
 
     <div class="bg-black col-12 col-md-12 col-xl-12" style="width: 100%">
         <video muted="muted" autoplay="" loop="" style="width: 100%; height: 100%;">
-            <source src="{% static 'index/assets/video/Video3.mp4' %}" type="video/mp4" />
+            <source src="{% static 'main_app/assets/video/Video3.mp4' %}" type="video/mp4" />
         </video>
     </div>
 {% comment %} footer {% endcomment %}
@@ -200,7 +200,21 @@
 {% include 'dolar_now_modal.html' %}
 {% include 'more_coins_modal.html' %}
 {% include 'bootstrap_scripts.html' %}
-    <script src="{% static 'index/js/main.js' %}"></script>
+    <script src="{% static 'main_app/js/main.js' %}"></script>
 </body>
+
+
+
+
+
+    <!--Termina el footer-->
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
 
 </html>
