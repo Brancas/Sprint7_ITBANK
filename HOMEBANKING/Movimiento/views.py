@@ -1,19 +1,10 @@
 from django.shortcuts import render
 from .forms import TransferenciaForm
-from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
-from HOMEBANKING.forms  import ExtendUserCreationForm, UserProfileForm
 
 
 # Create your views here.
-def main_movimientos(request):
 
-    return render(request, 'main_movimientos.html')
-
-
-def main_transferencia(request):
+def transferencia(request):
     """Esta funcion recibe la cuenta destino y el monto a transferir
     ! Falta que se conecte con la base de datos y modifique los campos correspondientes.
     ! Falta que autentifique el usuario y tome sus datos"""
@@ -26,5 +17,4 @@ def main_transferencia(request):
         if OBJ_transForm.is_valid():
             CNT_destino = request.POST.get('CT_Destino', '')
             TRF_monto = request.POST.get('TRF_monto', '')   
-    
-    return render(request, 'main_transferencia.html', {'form': OBJ_transForm})
+    return render(request, 'form.html', {'form': OBJ_transForm})
