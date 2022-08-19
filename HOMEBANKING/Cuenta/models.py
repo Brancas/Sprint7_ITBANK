@@ -17,4 +17,4 @@ class Cuenta(models.Model):
         db_table = 'Cuenta'
 
     def __str__(self):
-        return str(self.cliente)
+        return self.cliente
