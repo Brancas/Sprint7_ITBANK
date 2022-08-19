@@ -7,7 +7,7 @@ from HOMEBANKING.forms  import ExtendUserCreationForm, UserProfileForm
 
 # Create your views here.
 
-
+@login_required
 def main_prestamos(request):
 
     return render(request, 'main_prestamos.html')

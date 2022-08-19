@@ -1,7 +1,9 @@
-{% extends "parent_webapp.html" %}
+{% include 'bootstrap_head.html' %}
+{% include 'navbar__login.html' %}
 {% load static %}
 {% block title %} Inicie sesion {% endblock %}
 {% block content%}
+  <div class="container">
   <body>
     <style>
     body{ 
@@ -78,6 +80,8 @@
             
         </div>
     </div>
-
+  </div>
+  {% include 'footer.html' %}
   </body>
+  {% include 'bootstrap_scripts.html' %}
   {% endblock %}

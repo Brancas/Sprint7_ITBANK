@@ -34,16 +34,11 @@ from Tarjeta.views import main_tarjetas
 from Cuenta.views import (main_cuenta, 
                           main_configuracion,
                           main_actividad)
-from Login.views import (home, 
-                         register)
 
 urlpatterns = [
-    path('admin/',                   admin.site.urls),
+    path('admin/',                   admin.site.urls,                           name = "admin"),
     path('login',                    include('django.contrib.auth.urls')),
-    path('accounts/',                include('django.contrib.auth.urls')),
     path('',                         landing_page,                              name = "landing page"),
-    path('login/',                   login_usuario,                             name = "login"),
-    path('registrate/',              registro_usuario,                          name = "registrate"),
     path('main/',                    main_home,                                 name = "main"),
     path('main/prestamos/',          main_prestamos,                            name = "prestamos"),
     path('main/transferencia/',      main_transferencia,                        name = "transferencia"),
@@ -53,11 +48,9 @@ urlpatterns = [
     path('main/cuenta/',             main_cuenta,                               name = "cuenta"),
     path('main/configuracion/',      main_configuracion,                        name = "configuracion"),
     path('main/actividad/',          main_actividad,                            name = "actividad"),
-    path('inicio/',                  home,                                      name = "home"),
-    path('register/',                register,                                  name = "register"),
+    path('registrate/',              registro_usuario,                          name = "registrate"),
+    path('login/',                   login_usuario,                             name = "login"),
     
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

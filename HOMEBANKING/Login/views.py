@@ -30,7 +30,7 @@ def registro_usuario(request):
             submitted=True
              
 
-    return render(request,'registro.html',{'form':form,'submitted':submitted})
+    return render(request,'registro.html', {'form':form,'submitted':submitted})
 
 
 
@@ -45,7 +45,11 @@ def login_usuario(request):
         if user is not None:
             login(request, user)
             messages.success(request, ("Bienvenido de nuevo."))
-
+            
+            if user.is_staff:
+                return redirect('/admin')
+            
+            
             return redirect('main')
 
            
@@ -56,38 +60,15 @@ def login_usuario(request):
             username = request.POST['username']
             password = request.POST['password']
             messages.success(request, ("Usuario o contraseña invalidos."))
+            
+            
             return redirect(login_usuario)
             # Return an 'invalid login' error message.
             
     else:
         return render(request, 'login.html')
     
-def register(request):
-    if request.method == 'POST':
-        form = ExtendUserCreationForm(request.POST)
-        profile_form = UserProfileForm(request.POST)
-
-        if form.is_valid() and profile_form.is_valid:
-            user = form.save()
-
-            profile = profile_form.save(commit=False)
-            profile.user = user
-
-            profile.save()
-
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username = username, password = password)
-            login(request, user)
-
-            return redirect('index')
-    else:
-        form = ExtendUserCreationForm()
-        profile_form = UserProfileForm()
-
-    context = {'form': form, 'profile_form': profile_form}
-    return render(request, 'register.html', context)
-
-@ login_required
-def home(request):
-    return HttpResponse("Hola")
+def logout(request):
+    logout(request)
+    
+    return redirect('login')

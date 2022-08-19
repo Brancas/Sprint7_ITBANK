@@ -8,11 +8,14 @@ from HOMEBANKING.forms  import ExtendUserCreationForm, UserProfileForm
 
 
 # Create your views here.
+
+
+@login_required
 def main_movimientos(request):
 
     return render(request, 'main_movimientos.html')
 
-
+@login_required
 def main_transferencia(request):
     """Esta funcion recibe la cuenta destino y el monto a transferir
     ! Falta que se conecte con la base de datos y modifique los campos correspondientes.
