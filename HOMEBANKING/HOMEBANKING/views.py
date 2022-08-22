@@ -6,7 +6,6 @@ from .forms  import ExtendUserCreationForm, UserProfileForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required
 def landing_page(request):
 
     return render(request, 'index.html')
@@ -23,4 +22,3 @@ def main_home(request):
 def main_cajas(request):
 
     return render(request, 'main_cajas.html')
-
