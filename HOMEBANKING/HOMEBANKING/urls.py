@@ -25,36 +25,32 @@ from Login.views import login_usuario
 from registro.views import registro_usuario
 from .views import (landing_page, 
                     main_home,
-                    main_prestamos,
-                    main_movimientos, 
-                    main_cajas, 
-                    main_tarjetas, 
-                    main_cuenta,
-                    home,
-                    register,
+                    main_cajas,
                     )
-
-from Movimiento import views
-
+from Movimiento.views import (main_transferencia, 
+                              main_movimientos)
+from Prestamo.views import main_prestamos
+from Tarjeta.views import main_tarjetas
+from Cuenta.views import (main_cuenta, 
+                          main_configuracion,
+                          main_actividad)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', landing_page, name = "Landing Page"),
-    path('login', include('django.contrib.auth.urls')),
-    path('login/', login_usuario),
-    path('registrate/',registro_usuario),
-    path('transferencia/', views.transferencia),
-    path('main/', main_home,  name = "main"),
-    path('main/prestamos/', main_prestamos),
-    path('main/movimientos/', main_movimientos),
-    path('main/cajas/', main_cajas),
-    path('main/tarjetas/', main_tarjetas),
-    path('main/cuenta/', main_cuenta),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('inicio/', home, name = 'home'),
-    path('register/', register, name = 'register'),
+    path('admin/',                   admin.site.urls,                           name = "admin"),
+    path('login',                    include('django.contrib.auth.urls')),
+    path('',                         landing_page,                              name = "landing page"),
+    path('main/',                    main_home,                                 name = "main"),
+    path('main/prestamos/',          main_prestamos,                            name = "prestamos"),
+    path('main/transferencia/',      main_transferencia,                        name = "transferencia"),
+    path('main/movimientos/',        main_movimientos,                          name = "movimientos"),
+    path('main/cajas/',              main_cajas,                                name = "cajas"),
+    path('main/tarjetas/',           main_tarjetas,                             name = "tarjetas"),
+    path('main/cuenta/',             main_cuenta,                               name = "cuenta"),
+    path('main/configuracion/',      main_configuracion,                        name = "configuracion"),
+    path('main/actividad/',          main_actividad,                            name = "actividad"),
+    path('registrate/',              registro_usuario,                          name = "registrate"),
+    path('login/',                   login_usuario,                             name = "login"),
+    
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
