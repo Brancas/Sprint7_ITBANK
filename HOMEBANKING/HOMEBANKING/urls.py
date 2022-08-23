@@ -35,6 +35,7 @@ from Cuenta.views import (main_cuenta,
                           main_configuracion,
                           main_actividad)
 
+
 urlpatterns = [
     path('admin/',                   admin.site.urls,                           name = "admin"),
     path('login',                    include('django.contrib.auth.urls')),
